@@ -15,10 +15,8 @@
 
 ## Estrutura de pastas
 ```
-├── __tests__/ # para testes unitários, integração e ponta-a-ponta
 ├── public
 └── src
-    ├── assets/ # arquivos estáticos estruturais
     ├── components/ # componentes compartilháveis em toda aplicação
     ├── configs/ # configurações da aplicação e de bibliotecas
     ├── pages/ # páginas da aplicação
@@ -37,7 +35,7 @@
 - [Redux](https://redux.js.org/introduction/getting-started)
 - [Redux Saga](https://redux-saga.js.org/)
 - [Redux Persist](https://github.com/rt2zz/redux-persist#quickstart)
-- [Unform](https://unform.dev/)
+- [Ant Design](https://ant.design/)
 - [Axios](https://github.com/axios/axios)
 - [React icons](https://react-icons.netlify.com/)
 - [Testing Library](https://testing-library.com/)
