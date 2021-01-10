@@ -1,3 +1,5 @@
+Repositório do front-end da aplicação feita no desafio da Fabwork
+
 ## Instalação e configuração
 
 1. Faça o clone desse repositório;
