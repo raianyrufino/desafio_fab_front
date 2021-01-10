@@ -3,6 +3,9 @@ Repositório do front-end da aplicação feita no desafio da Fabwork
 ## Instalação e configuração
 
 1. Faça o clone desse repositório;
+```
+git clone https://github.com/raianyrufino/desafio_fab_front
+```
 2. Acesse a raiz do projeto `cd desafio_fab_front`;
 3. Faça uma cópia do env `cp .env.example .env` e configure a URL da API;
 4. Instale o NPM `apt-get install npm -y`
@@ -39,10 +42,3 @@ Repositório do front-end da aplicação feita no desafio da Fabwork
 - [Redux Persist](https://github.com/rt2zz/redux-persist#quickstart)
 - [Ant Design](https://ant.design/)
 - [Axios](https://github.com/axios/axios)
-- [React icons](https://react-icons.netlify.com/)
-- [Testing Library](https://testing-library.com/)
-- [Jest](https://jestjs.io/)
-- [Eslint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
-- [React app rewired](https://github.com/timarney/react-app-rewired)
-- [PropTypes](https://github.com/facebook/prop-types)
