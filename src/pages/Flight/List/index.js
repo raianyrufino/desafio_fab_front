@@ -22,9 +22,7 @@ export default function List() {
 
   const {
     flights,
-    last_page,
     current_page,
-    per_page,
     total
   } = useSelector(state => state.flight);
 
@@ -43,8 +41,14 @@ export default function List() {
       let origin_location = locations.find(x => x.id == e.origin_id);
       let destiny_location = locations.find(x => x.id == e.destiny_id);
       
-      var origin_location_formated = origin_location.city + ' - ' + origin_location.state + ", " + origin_location.country + ", " + origin_location.zip_code;
-      var destiny_location_formated = destiny_location.city + ' - ' + destiny_location.state + ", " + destiny_location.country + ", " + destiny_location.zip_code;
+      var origin_location_formated = {
+       "location": origin_location.city + ' - ' + origin_location.state + ", " + origin_location.country + ", " + origin_location.zip_code,
+       "id": e.origin_id
+      };
+      var destiny_location_formated = { 
+       "location": destiny_location.city + ' - ' + destiny_location.state + ", " + destiny_location.country + ", " + destiny_location.zip_code,
+       "id": e.destiny_id
+      };
     }
     dispatch(AddDataFlight(origin_location_formated, destiny_location_formated, e.date_hour))
   }
@@ -81,7 +85,6 @@ export default function List() {
                 render={i => {
                   if (locations) {
                     let origin_location = locations && locations.find(x => x.id == i.origin_id);
-
                     return origin_location.city + ' - ' + origin_location.state + ', ' + origin_location.country + ', ' + origin_location.zip_code;
                   }
                 }}
@@ -92,7 +95,7 @@ export default function List() {
                 render={i => {
                   if (locations) {
                     let destiny_location = locations.find(x => x.id == i.destiny_id);
-
+                    
                     return destiny_location.city + ' - ' + destiny_location.state + ', ' + destiny_location.country + ', ' + destiny_location.zip_code;
                   }
                 }}
@@ -116,17 +119,6 @@ export default function List() {
                 
                 />
                 <Column 
-                title="Situação" 
-                dataIndex="date_hour" 
-                key="situation" 
-                render={value => {
-                  if (value < new Date().toLocaleString()) {
-                    return ('a');
-                  }
-                  return 'b';
-                }}
-                />
-                <Column 
                 title=""
                 key="action" 
                 render={(i) => {
@@ -139,8 +131,6 @@ export default function List() {
                   );
                 }}
                 />
-                  {/* var now = new Date().toLocaleString(); */}
-        
             </Table>
         </Content>
     </Layout>

@@ -27,21 +27,21 @@ const Register = () => {
     };
 
     return (
-        <>
+        <div style={{textAlign: 'center'}}>
         <h2 style={{textAlign: 'center', marginTop: '10px'}}>Registrar Localização</h2>
 
         <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
         <Form.Item name={['item', 'city']} label="Cidade" rules={[{ required: true }]}>
-            <Input />
+            <Input style={{width: '500px'}} />
         </Form.Item>
         <Form.Item name={['item', 'state']} label="Estado" rules={[{ required: true }]}>
-            <Input />
+            <Input style={{width: '500px'}} />
         </Form.Item>
         <Form.Item name={['item', 'country']} label="País" rules={[{ required: true}]}>
-            <Input />
+            <Input style={{width: '500px'}} />
         </Form.Item>
         <Form.Item name={['item', 'zip_code']} label="Código Postal" rules={[{ required: true}]}>
-            <Input />
+            <Input style={{width: '500px'}} />
         </Form.Item>
         <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
             <Button type="primary" htmlType="submit">
@@ -49,7 +49,7 @@ const Register = () => {
             </Button>
         </Form.Item>
         </Form>
-        </>
+        </div>
     );
 };
 

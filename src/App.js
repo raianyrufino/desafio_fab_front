@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Router } from 'react-router-dom';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import 'antd/dist/antd.css';
 
 import { store, persistor } from './store';

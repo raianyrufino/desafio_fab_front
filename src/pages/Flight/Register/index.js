@@ -9,7 +9,6 @@ import {
   CreateFlight,
   UpdateFlight
 } from '../../../store/modules/flight/actions';
-import moment from 'moment';
 
 const Register = () => {
     const dispatch = useDispatch();
@@ -55,6 +54,7 @@ const Register = () => {
 
     const onFinish = (values) => {
       var d = values.date_hour._d;
+      
       if (id) {
         dispatch(UpdateFlight(id, values.origin, values.destiny, d.toLocaleString()));
       } else {
@@ -63,7 +63,7 @@ const Register = () => {
     };
 
     return (
-        <>
+        <div style={{textAlign: 'center'}}>
         <h2 style={{textAlign: 'center', marginTop: '10px'}}> { id ? 'Atualizar' : 'Registrar' } Voo</h2>
 
         <Form 
@@ -73,8 +73,8 @@ const Register = () => {
           onFinish={onFinish} 
           validateMessages={validateMessages}
           initialValues={{
-            origin: id ? origin_location : '',
-            destiny: id ? destiny_location : ''
+            origin: id ? parseInt(origin_location.id) : '',
+            destiny: id ? parseInt(destiny_location.id) : ''
           }}
         >
         <Form.Item name="origin" label="Origem" rules={[{ required: true }]}>
@@ -100,7 +100,6 @@ const Register = () => {
         </Form.Item>
         <Form.Item name="destiny" label="Destino" rules={[{ required: true }]}>
           <Select
-            defaultValue={id ? destiny_location : false}
             showSearch
             style={{width: '500px'}}
             placeholder="Selecione o Destino"
@@ -135,7 +134,7 @@ const Register = () => {
             </Button>
         </Form.Item>
         </Form>
-        </>
+        </div>
     );
 };
 

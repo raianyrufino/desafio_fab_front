@@ -7,7 +7,7 @@ import { addToast } from '../toast/actions';
 
 export function* getFlights({ payload }) {
   yield delay(50);
-
+  
   const response = yield call(
     api,
     'get',
@@ -17,7 +17,7 @@ export function* getFlights({ payload }) {
   );
 
   const { data, status } = response;
-
+  
   switch (status) {
     case 200:
       yield put(
@@ -42,15 +42,17 @@ export function* getFlights({ payload }) {
 }
 
 export function* createFlight({ payload }) {
+  const date_array = payload.date_hour.split(' ');
+  const date_ymd = date_array[0].split('/');
+
   const response = yield call(
-    api,
-    'post',
-    `/flights`,
-    {},
+    api, 
+    'post', 
+    `/flights`, 
     {
       origin_id: payload.origin_id,
       destiny_id: payload.destiny_id,
-      date_hour: payload.date_hour
+      date_hour: `${date_ymd[2]}-${date_ymd[1]}-${date_ymd[0]} ${date_array[1]}`,
     }
   );
   const { data, status } = response;
