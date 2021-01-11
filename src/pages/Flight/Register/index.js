@@ -92,7 +92,7 @@ const Register = () => {
               locations.map(item => {
               return (
                 <Option value={item.id} key={item.id}>
-                  {item.city + ' - ' + item.state + ', ' + item.country + ', ' + item.zip_code}
+                  {item.city + ' - ' + item.state + ', ' + item.country + ', ' + item.zip_code.substr(0,5)+"-"+item.zip_code.substr(5)}
                 </Option>
               );
             })}
@@ -113,7 +113,7 @@ const Register = () => {
               locations.map(item => {
               return (
                 <Option value={item.id} key={item.id}>
-                  {item.city + ' - ' + item.state + ', ' + item.country + ', ' + item.zip_code}
+                  {item.city + ' - ' + item.state + ', ' + item.country + ', ' + item.zip_code.substr(0,5)+"-"+item.zip_code.substr(5)}
                 </Option>
               );
             })}

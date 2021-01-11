@@ -45,7 +45,13 @@ export default function List() {
                   showSizeChanger: false,
                 }}  
             >
-                <Column title="Código Postal" dataIndex="zip_code" key="zip_code" />
+                <Column 
+                  title="Código Postal" 
+                  key="zip_code" 
+                  render={(i) => {
+                    return i.zip_code.substr(0,5)+"-"+i.zip_code.substr(5);
+                  }}
+                />
                 <Column title="País" dataIndex="country" key="country" />
                 <Column title="Cidade" dataIndex="city" key="city" />
                 <Column title="Estado" dataIndex="state" key="state" />

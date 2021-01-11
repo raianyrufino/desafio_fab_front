@@ -45,7 +45,7 @@ export function* createLocation({ payload }) {
       zip_code: payload.zip_code,
       country: payload.country,
       city: payload.city,
-      state: payload.city
+      state: payload.state
     },
     {}
   );
