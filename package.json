@@ -4,9 +4,6 @@
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.3.0",
-    "@nato-digital/helpers": "^1.0.2",
-    "@nato-digital/tema-componentes": "1.0.12",
-    "@rocketseat/unform": "^1.6.2",
     "@unform/core": "^2.0.0",
     "@unform/web": "^2.0.0",
     "antd": "^4.10.0",
